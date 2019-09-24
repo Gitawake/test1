@@ -1,7 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
+from requests_html import HTMLSession
 
-from testx1 import *
+from Box import *
 
 app = Tk()
 app.title('爬虫训练系统v1.0.0')
@@ -16,6 +17,11 @@ vcode = Entry(monty, validate="focusout")
 phone.grid(row=0, column=1, padx=10, pady=5)
 vcode.grid(row=1, column=1, padx=10, pady=5)
 
+session = HTMLSession()
+r = session.get('https://www.cnblogs.com/shapeL/p/9037035.html')
+
+r.html.xpath()
+print()
 
 def show():
     nuberyz(phone.get(), vcode.get())
